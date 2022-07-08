@@ -122,8 +122,10 @@ header .logo{
     object-position: center;
     display: flex;
     flex-direction: column;
+    sad
     flex-grow: 1;
     overflow-y: auto;
+    max-height: 60vh;
 }
 
 .msg-container{
