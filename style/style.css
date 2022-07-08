@@ -27,17 +27,28 @@
 .container,
 .row .left, 
 .row .right,
-.row .col-12
+.col-4,
+.col-8,
+.col-12
 {
     height: 80vh;
 }
 /* ! ############################################################ */
-/* ! #################### LEFT ################################# */
+/* ! #################### LEFT & RIGHT ################################# */
 /* ! ############################################################ */
 .row .left{
-    min-width: 40%;
+    margin: 0 auto;
 }
-.row .col-12{
+.row .right{
+    /* max-width: 5vw;
+    min-width: 25vw; */
+    margin: 0 auto;
+
+}
+
+.col-4,
+.col-8,
+.col-12{
     position: relative;
 }
 header,
@@ -45,12 +56,14 @@ header,
 #searchBro,
 #bro
 {
-    width: 40vw;
+    /* width: 25vw; */
 
+}
+.row .right header{
+    /* width: 25vw; */
 }
 header{
     min-height: 10vh;
-    background-color: blue;
 }
 #bro .logo,
 header .logo{
@@ -75,6 +88,7 @@ header .logo{
     max-height: 50vh;
     background-color: purple;
     overflow-y: auto;
+    white-space: nowrap;
 
     position: absolute;
     bottom: 0px;
@@ -86,33 +100,19 @@ header .logo{
 /* ! ############################################################ */
 /* ! #################### RIGHT ################################# */
 /* ! ############################################################ */
-/* .row .right{
-    max-width: 60%;
-} */
-
-
-
-
-
-/* .logo{
-    height: 50px;
-    border-radius: 50%;
+.right header{
+    min-height: 10vh;
+    background-color: antiquewhite;
 }
-
-#notifications a{
-    color: darkblue;
-
-}
-
-#bro{
+.right main{
     min-height: 60vh;
-    max-height: 60vh;
 }
-.row{
-    position: relative;
+.right #type{
+    background-color: aqua;
+    min-height: 10vh;
+} 
+.mainImg img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
-#type{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-} */
