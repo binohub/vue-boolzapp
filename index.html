@@ -18,78 +18,105 @@
 
 <body>
 
-    <div id="app">
+    <div id="app" class="d-flex align-items-center">
+        <!-- ! ########## BACKGROUND ######### -->
         <div class="background">
             <div class="bgUp"></div>
             <div class="bgDown"></div>
         </div>
-        <div class="container containerCenter">
-            <div class="row bg-dark text-light">
 
-                <div class="col-4 pl-0 pr-0 pb-5">
-                    <header class="d-flex justify-content-between align-items-center p-2">
-                        <div class="d-flex align-items-center">
-                            <div class="userLogo px-1">
-                                <img class="logo" src="./img/avatar_io.jpg" alt="io">
-                            </div>
-                            <div class="userName px-1">
-                                <span>Arya</span>
-                            </div>
-                        </div>
-                        <div class="text-end">
-                            <div class="userSettings">
-                                <i class="bi bi-wrench-adjustable-circle"></i>
-                                <i class="bi bi-chat-heart"></i>
-                                <i class="bi bi-sliders2-vertical"></i>
-                            </div>
-                        </div>
-                    </header>
-                    <div id="notifications"
-                        class="d-flex justify-content-around align-items-center bg-primary p-4 text-dark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-bell-slash bg-white text-dark rounded-circle p-2" viewBox="0 0 16 16">
-                            <path
-                                d="M5.164 14H15c-.299-.199-.557-.553-.78-1-.9-1.8-1.22-5.12-1.22-6 0-.264-.02-.523-.06-.776l-.938.938c.02.708.157 2.154.457 3.58.161.767.377 1.566.663 2.258H6.164l-1 1zm5.581-9.91a3.986 3.986 0 0 0-1.948-1.01L8 2.917l-.797.161A4.002 4.002 0 0 0 4 7c0 .628-.134 2.197-.459 3.742-.05.238-.105.479-.166.718l-1.653 1.653c.02-.037.04-.074.059-.113C2.679 11.2 3 7.88 3 7c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0c.942.19 1.788.645 2.457 1.284l-.707.707zM10 15a2 2 0 1 1-4 0h4zm-9.375.625a.53.53 0 0 0 .75.75l14.75-14.75a.53.53 0 0 0-.75-.75L.625 15.625z" />
-                        </svg>
-                        <div>
-                            <h6>Ricevi notifiche di nuovi messaggi</h6>
-                            <a href="#">Attiva notifiche desktop</a>
-                        </div>
-                    </div>
-                    <div class="input-group rounded">
-                        <span class="input-group-text border-0 bg-dark text-white" id="search-addon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                class="bi bi-search-heart" viewBox="0 0 16 16">
-                                <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                                <path
-                                    d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-                            </svg>
-                        </span>
-                        <input type="search" class="form-control rounded bg-dark text-white"
-                            placeholder="Cerca o inizia una nuova chat" aria-label="Search"
-                            aria-describedby="search-addon" />
-                    </div>
-                    <div id="bro">
-                        <div class=" d-flex justify-content-between align-items-center p-2"
-                            v-for="(element, index) in contacts">
-                            <div class="d-flex">
-                                <img class="logo px-2" :src=" './img/avatar' + element.avatar + '.jpg' " alt="avatar">
-                                <div class="px-2">
-                                    <h5>{{ element.name }}</h5>
-                                    <span> ultimo messaggio inviato </span>
+
+        <!-- ! ########## CONTAINER ######### -->
+        <div class="container bg-dark text-light">
+            <div class="row">
+
+                <div class="left bg-danger">
+                    <div class="col-12 ">
+
+                        <header class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="userLogo mx-2">
+                                    <img class="logo" src="./img/avatar_io.jpg" alt="io">
                                 </div>
-
+                                <div class="userName mx-2">
+                                    <span>Arya</span>
+                                </div>
                             </div>
+                            <div class="text-end">
+                                <div class="userSettings">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="mx-2 bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="mx-2 bi bi-chat-heart" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="mx-2 bi bi-sliders2-vertical" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M0 10.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1H3V1.5a.5.5 0 0 0-1 0V10H.5a.5.5 0 0 0-.5.5ZM2.5 12a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5Zm3-6.5A.5.5 0 0 0 6 6h1.5v8.5a.5.5 0 0 0 1 0V6H10a.5.5 0 0 0 0-1H6a.5.5 0 0 0-.5.5ZM8 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2A.5.5 0 0 0 8 1Zm3 9.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1H14V1.5a.5.5 0 0 0-1 0V10h-1.5a.5.5 0 0 0-.5.5Zm2.5 1.5a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </header>
+                        <div id="notifications"
+                            class="d-flex justify-content-around align-items-center bg-primary text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                class="bi bi-bell-slash bg-white text-dark rounded-circle p-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.164 14H15c-.299-.199-.557-.553-.78-1-.9-1.8-1.22-5.12-1.22-6 0-.264-.02-.523-.06-.776l-.938.938c.02.708.157 2.154.457 3.58.161.767.377 1.566.663 2.258H6.164l-1 1zm5.581-9.91a3.986 3.986 0 0 0-1.948-1.01L8 2.917l-.797.161A4.002 4.002 0 0 0 4 7c0 .628-.134 2.197-.459 3.742-.05.238-.105.479-.166.718l-1.653 1.653c.02-.037.04-.074.059-.113C2.679 11.2 3 7.88 3 7c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0c.942.19 1.788.645 2.457 1.284l-.707.707zM10 15a2 2 0 1 1-4 0h4zm-9.375.625a.53.53 0 0 0 .75.75l14.75-14.75a.53.53 0 0 0-.75-.75L.625 15.625z" />
+                            </svg>
                             <div>
-                                <span>12:00</span>
+                                <h6>Ricevi notifiche di nuovi messaggi</h6>
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div id="searchBro" class="input-group rounded">
+                            <span class="input-group-text border-0 bg-dark text-white" id="search-addon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                    class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path
+                                        d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span>
+                            <input type="search" class="form-control rounded bg-dark text-white"
+                                placeholder="Cerca o inizia una nuova chat" aria-label="Search"
+                                aria-describedby="search-addon" />
+                        </div>
+                        <div id="bro">
+                            <div id="broContainer" class=" d-flex justify-content-between align-items-center p-2"
+                                v-for="(element, index) in contacts">
+                                <div class="d-flex">
+                                    <img class="logo px-2" :src=" './img/avatar' + element.avatar + '.jpg' "
+                                        alt="avatar">
+                                    <div class="px-2">
+                                        <h5>{{ element.name }}</h5>
+                                        <span> ultimo messaggio inviato </span>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <span>12:00</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="right">
 
                 </div>
 
+
                 <div class="col-8">
-                    <header class="d-flex justify-content-between align-items-center p-2">
+                    <!-- <header class="d-flex justify-content-between align-items-center p-2">
                         <div class="d-flex align-items-center">
                             <div class="userLogo px-1">
                                 <img class="logo" src="./img/avatar_io.jpg" alt="io">
@@ -123,7 +150,6 @@
                             </div>
                         </div>
                     </header>
-                    <div class="msg"></div>
 
                     <div id="type" class="input-group mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
@@ -142,11 +168,12 @@
                                     d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
                             </svg>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
