@@ -116,11 +116,31 @@ header .logo{
     /* background-color: aqua; */
     min-height: 10vh;
 } 
-.mainImg img{
+.mainChat{
+    background-image: url(../img/mine.jpg);
     object-fit: cover;
     object-position: center;
-    width: 100%;
-    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.msg-container{
+    width: fit-content;
+    padding: 0.5rem;
+    max-width: 50%;
+    border-radius: 1.5rem;
+    margin: 1rem 4rem;
+}
+.msg-container.received-msg{
+    align-self: flex-end;
+    background-color:  black;
+}
+
+.msg-container.sent-msg{
+    align-self: flex-start;
+    background-color: #65ab33;
 }
 
 /* ! ############################################################ */
@@ -133,4 +153,7 @@ header .logo{
 
 .received{
     text-align: start;
+}
+.msg-box{
+    position: relative;
 }

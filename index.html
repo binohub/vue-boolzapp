@@ -146,7 +146,19 @@
                                 </div>
                             </div>
                         </header>
-                        <main class="mainChat mx-5">
+                        <main class="mainChat">
+                            <div v-for="(singleMessage, index) in contacts[active].messages"
+                            :class="{'sent-msg': singleMessage.status == 'sent', 'received-msg': singleMessage.status == 'received'}"
+                            class="msg-container">
+                            <div class="msg-box">
+                                <div class="msg-text">
+                                    {{singleMessage.message}}
+                                </div>
+                            </div>
+                        </div>
+
+                            
+                            
                         </main>
 
                         <div id="type" class="input-group d-flex align-items-center">
