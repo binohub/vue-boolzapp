@@ -1,23 +1,22 @@
 /* ! ############################################################ */
 /* ! ###################### BACKGROUND ######################### */
 /* ! ############################################################ */
-/* .bgUp,
+.bgUp,
 .bgDown{
-    width: 100vw;
-
+    width: 100%;
     position: absolute;
     z-index: -1;
 }
 .bgUp{
-    background-color: black;
-    height: 15%;
+    background-color: darkolivegreen;
+    height: 20%;
     top: 0px;
 }
 .bgDown{
     background-color: rgb(4, 7, 32);
-    height: 85%;
+    height: 80%;
     bottom: 0px;
-} */
+}
 /* ! ############################################################ */
 /* ! #################### APP ######################################## */
 /* ! ############################################################ */
@@ -46,10 +45,12 @@
 
 }
 
-.col-4,
-.col-8,
-.col-12{
+.row .col-4,
+.row .col-8,
+.row .col-12{
     position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 header,
 #notifications,
@@ -81,20 +82,24 @@ header .logo{
 #searchBro{
     min-height: 10vh;
     align-items: center;
-    background-color: green;
+    /* background-color: green; */
 }
 #bro{
     min-height: 50vh;
     max-height: 50vh;
-    background-color: purple;
+    /* background-color: purple; */
     overflow-y: auto;
     white-space: nowrap;
-
-    position: absolute;
-    bottom: 0px;
 }
+
 #broContainer{
     border: 1px solid white;
+
+    transition: 0.2s;
+}
+#broContainer:hover{
+    cursor: pointer;
+    filter: grayscale(2);
 }
 
 /* ! ############################################################ */
@@ -102,17 +107,30 @@ header .logo{
 /* ! ############################################################ */
 .right header{
     min-height: 10vh;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 .right main{
     min-height: 60vh;
 }
 .right #type{
-    background-color: aqua;
+    /* background-color: aqua; */
     min-height: 10vh;
 } 
 .mainImg img{
     object-fit: cover;
     object-position: center;
     width: 100%;
+    
+}
+
+/* ! ############################################################ */
+/* ! #################### Msgg ################################# */
+/* ! ############################################################ */
+
+.sent{
+    text-align: end;
+}
+
+.received{
+    text-align: start;
 }

@@ -30,7 +30,7 @@
         <div class="container bg-dark text-light">
             <div class="row">
                 <div class="col-4">
-                    <div class="left bg-danger">
+                    <div class="left">
 
 
                         <header class="d-flex justify-content-between align-items-center">
@@ -79,19 +79,19 @@
                         <div id="searchBro" class="input-group rounded">
                             <span class="input-group-text border-0 bg-dark text-white" id="search-addon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                    class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    class="mx-1 bi bi-search-heart" viewBox="0 0 16 16">
                                     <path
                                         d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
                                     <path
                                         d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                                 </svg>
                             </span>
-                            <input type="search" class="form-control rounded bg-dark text-white"
+                            <input type="search" class="mx-4 form-control rounded bg-dark text-white"
                                 placeholder="Cerca o inizia una nuova chat" aria-label="Search"
                                 aria-describedby="search-addon" />
                         </div>
                         <div id="bro">
-                            <div id="broContainer" class=" d-flex justify-content-between align-items-center p-2"
+                            <div id="broContainer" @click="functionBroClicked(index)" class=" d-flex justify-content-between align-items-center p-3"
                                 v-for="(element, index) in contacts">
                                 <div class="d-flex">
                                     <img class="logo px-2" :src=" './img/avatar' + element.avatar + '.jpg' "
@@ -118,8 +118,8 @@
                                     <img class="logo" src="./img/avatar_io.jpg" alt="io">
                                 </div>
                                 <div class="userName mx-2 d-flex flex-column">
-                                    <span>Arya</span>
-                                    <span>ultimo accesso alle </span>
+                                    <span>{{ contacts[active].name }}</span>
+                                    <span> idk </span>
                                 </div>
                             </div>
                             <div class="text-end">
@@ -146,8 +146,7 @@
                                 </div>
                             </div>
                         </header>
-                        <main class="mainImg d-flex">
-                            <img src="./img/mine.jpg" alt="" sizes="" srcset="">
+                        <main class="mainChat mx-5">
                         </main>
 
                         <div id="type" class="input-group d-flex align-items-center">
@@ -194,4 +193,4 @@
         crossorigin="anonymous"></script>
 </body>
 
-</html> -->
+</html>

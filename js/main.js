@@ -4,6 +4,7 @@ const wapp = new Vue(
         el: '#app',
 
         data: {
+            active: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,6 +171,12 @@ const wapp = new Vue(
         },
 
         methods: {
+            functionBroClicked: function(index){
+                if(index != this.active){
+                    this.active = index
+                }
+            },
+
         },
 
     },
