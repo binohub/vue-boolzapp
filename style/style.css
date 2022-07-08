@@ -1,0 +1,28 @@
+.bgUp,
+.bgDown{
+    width: 100vw;
+     /* ! remove from the page & set in the back */
+    position: absolute;
+    z-index: -1;
+}
+
+.bgUp{
+    background-color: rgb(100, 255, 100);
+    height: 20%;
+    top: 0px;
+}
+.bgDown{
+    background-color: rgb(251, 251, 251);
+    height: 80%;
+    bottom: 0px;
+}
+
+.logo{
+    height: 50px;
+    border-radius: 50%;
+}
+
+#notifications a{
+    color: darkblue;
+
+}
