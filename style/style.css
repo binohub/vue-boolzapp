@@ -34,3 +34,11 @@
     min-height: 60vh;
     max-height: 60vh;
 }
+.row{
+    position: relative;
+}
+#type{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
