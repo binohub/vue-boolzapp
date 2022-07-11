@@ -36,10 +36,10 @@
                         <header class="d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
                                 <div class="userLogo mx-2">
-                                    <img class="logo" src="./img/avatar_io.jpg" alt="io">
+                                    <img class="logo" :src=" './img/avatar' + user.avatar + '.jpg' " alt="io">
                                 </div>
                                 <div class="userName mx-2">
-                                    <span>Arya</span>
+                                    <span>{{user.name}}</span>
                                 </div>
                             </div>
                             <div class="text-end">
@@ -153,6 +153,7 @@
                             <div class="msg-box">
                                 <div class="msg-text">
                                     {{singleMessage.message}}
+                                    <!--todo {{singleMessage.time}} -->
                                 </div>
                             </div>
                         </div>
@@ -168,7 +169,10 @@
                                 <path
                                     d="M4.285 6.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 4.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 3.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683zM7 9.5C7 8.672 6.552 8 6 8s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5z" />
                             </svg>
-                            <input type="text" class="form-control bg-dark text-light text-center" placeholder="Scrivi un messaggio">
+
+                            <input class="form-control bg-dark text-light text-center" placeholder="Scrivi un messaggio" 
+                            v-model="newMessage" @keyup.enter="sendNewMessage(newMessage)" type="text" placeholder=" Scrivi un messaggio "> 
+                            
                             <div class="input-group-append">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                     class=" px-2 mx-5 bi bi-mic" viewBox="0 0 16 16">

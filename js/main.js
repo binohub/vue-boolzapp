@@ -4,7 +4,12 @@ const wapp = new Vue(
         el: '#app',
 
         data: {
+            newMessage: "",
             active: 0,
+            user: {
+                name: 'Arya Stark',
+                avatar:'_io',
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -171,12 +176,40 @@ const wapp = new Vue(
         },
 
         methods: {
-            functionBroClicked: function(index){
-                if(index != this.active){
-                    this.active = index
-                }
+            functionBroClicked: function (index) {
+                this.active = index
             },
 
+            sendNewMessage() {
+                if (this.newMessage.length > 0 && this.newMessage.length < 50)  {
+                    this.contacts[this.active].messages.push(
+                        {
+                            message: this.newMessage,
+                            status: 'sent'
+                        }
+                    );
+
+                    this.setTime()
+                    // svuoto la casella testo
+                    this.newMessage = "";
+                }
+
+            },
+            receivedNewMessage() {
+                this.contacts[this.active].messages.push(
+                    {
+                        message: 'ok',
+                        status: 'received'
+                    }
+                );
+            },
+            setTime() {
+                setTimeout(() => {
+                    this.receivedNewMessage()
+                }
+                    , 1000);
+            }
+    
         },
 
     },
