@@ -4,8 +4,10 @@ const wapp = new Vue(
         el: '#app',
 
         data: {
+            userSearch: "",
             newMessage: "",
             active: 0,
+            lastAccess: "12:00",
             user: {
                 name: 'Arya Stark',
                 avatar:'_io',
@@ -77,101 +79,101 @@ const wapp = new Vue(
                         }
                     ],
                 },
-                {
-                    name: 'Alessandro B.',
-                    avatar: '_4',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Alessandro L.',
-                    avatar: '_5',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ricordati di chiamare la nonna',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Va bene, stasera la sento',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Claudia',
-                    avatar: '_6',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
-                            status: 'sent'
-                        }
-                    ],
-                },
-                {
-                    name: 'Federico',
-                    avatar: '_7',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
-                        }
-                    ],
-                },
-                {
-                    name: 'Davide',
-                    avatar: '_8',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
-                            status: 'received'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
-                            status: 'received'
-                        }
-                    ],
-                }
+                // {
+                //     name: 'Alessandro B.',
+                //     avatar: '_4',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             message: 'Lo sai che ha aperto una nuova pizzeria?',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             message: 'Si, ma preferirei andare al cinema',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Alessandro L.',
+                //     avatar: '_5',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             message: 'Ricordati di chiamare la nonna',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             message: 'Va bene, stasera la sento',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Claudia',
+                //     avatar: '_6',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             message: 'Ciao Claudia, hai novità?',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             message: 'Non ancora',
+                //             status: 'received'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:51:00',
+                //             message: 'Nessuna nuova, buona nuova',
+                //             status: 'sent'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Federico',
+                //     avatar: '_7',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                //             status: 'received'
+                //         }
+                //     ],
+                // },
+                // {
+                //     name: 'Davide',
+                //     avatar: '_8',
+                //     visible: true,
+                //     messages: [
+                //         {
+                //             date: '10/01/2020 15:30:55',
+                //             message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                //             status: 'received'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:50:00',
+                //             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                //             status: 'sent'
+                //         },
+                //         {
+                //             date: '10/01/2020 15:51:00',
+                //             message: 'OK!!',
+                //             status: 'received'
+                //         }
+                //     ],
+                // }
             ]
         },
 
@@ -180,18 +182,35 @@ const wapp = new Vue(
                 this.active = index
             },
 
+            functionLog: function(cosavuoiloggare){
+                console.log(cosavuoiloggare);
+                this.userSearch = "";
+            },
+
+            functionSearch: function(){
+                // per ogni elemento di contacts, se ha le stesse
+                // lettere, il contatto saraà visible altrimenti scompare
+                this.contacts.forEach( contact=>{
+                    if(contact.name.toLowerCase().includes(this.userSearch.toLowerCase())){
+                        contact.visible = true;
+                        console.log(contact);
+                    }else{
+                        contact.visible = false;
+                    }
+                });
+            },
+
             sendNewMessage() {
                 if (this.newMessage.length > 0 && this.newMessage.length < 50)  {
                     this.contacts[this.active].messages.push(
                         {
+                            // date: moment().format('HH:mm'),
                             message: this.newMessage,
                             status: 'sent'
                         }
                     );
-
-                    this.setTime()
-                    // svuoto la casella testo
                     this.newMessage = "";
+                    this.receivedNewMessage()
                 }
 
             },
@@ -206,10 +225,8 @@ const wapp = new Vue(
             setTime() {
                 setTimeout(() => {
                     this.receivedNewMessage()
-                }
-                    , 1000);
+                }, 1000);
             }
-    
         },
 
     },

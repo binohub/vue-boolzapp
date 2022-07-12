@@ -86,9 +86,12 @@
                                         d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                                 </svg>
                             </span>
+
                             <input type="search" class="mx-4 form-control rounded bg-dark text-white"
                                 placeholder="Cerca o inizia una nuova chat" aria-label="Search"
+                                v-model="userSearch" @keyup.enter="functionSearch()"
                                 aria-describedby="search-addon" />
+
                         </div>
                         <div id="bro">
                             <div id="broContainer" @click="functionBroClicked(index)" class=" d-flex justify-content-between align-items-center p-3"
@@ -119,7 +122,7 @@
                                 </div>
                                 <div class="userName mx-2 d-flex flex-column">
                                     <span>{{ contacts[active].name }}</span>
-                                    <span> idk </span>
+                                    <p>ultimo accesso oggi alle {{lastAccess}}</p>
                                 </div>
                             </div>
                             <div class="text-end">
@@ -152,8 +155,8 @@
                             class="msg-container">
                             <div class="msg-box">
                                 <div class="msg-text">
-                                    {{singleMessage.message}}
-                                    <!--todo {{singleMessage.time}} -->
+                                    <p>{{singleMessage.message}}</p>
+                                    <p class="msg-date">{{singleMessage.date}}</p>
                                 </div>
                             </div>
                         </div>
