@@ -75,7 +75,52 @@ body{
 #search-bar .bi-search{
     position: absolute;
     display: inline-block;
-    top: 15px;
+    top: 10px;
     left: 20px;
     z-index: 1;
+}
+#chat-boxes{    
+    height: 40vh;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+.chat-box{
+    background-color: whitesmoke;
+    border-top:solid;
+    border-color: gray;
+    height: 70px;
+    font-size: 28px;
+    margin: 0;
+}
+#chat-boxes>.col-2 .col-9{
+    padding: 0;
+}
+.active-chat{
+    transition: 0.2s;
+    background-color: #009688;
+    font-weight: bold;
+}
+.active-chat:hover{
+    background-color: #f2f2f2;
+}
+.contact-picture img{
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+}
+.contact-info>h5{
+    font-size: 1rem;
+    margin: 0;
+}
+.contact-info{
+    height: 50px;
+    flex-grow: 1;
+    padding: 0 5px;
+}
+.contact-info > .last-message-sent{
+    font-size: 0.7rem;
+}
+.contact-time{
+    font-size: 0.5rem;
+    height: 50px;
 }
