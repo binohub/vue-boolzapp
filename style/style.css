@@ -1,7 +1,8 @@
-body{
+body {
     background-color: #d9dbd3;
 }
-#bg-upper-color{
+
+#bg-upper-color {
     position: absolute;
     top: 0;
     left: 0;
@@ -9,44 +10,55 @@ body{
     height: 200px;
     background-color: #009688;
 }
-.container-lg{
+
+.container-lg {
     background-color: #d9dbd3;
     height: 80vh;
     margin-top: 80px;
 }
-#left-section, #right-section{
+
+#left-section,
+#right-section {
     padding: 0;
-} 
-.top-section{
+}
+
+.top-section {
     height: 60px;
 }
-.user-info img{
-    height:40px;
+
+.user-info img {
+    height: 40px;
     border-radius: 50%;
     margin-right: 0.5rem;
     transition: 0.2s;
 }
-.user-info img:hover{
+
+.user-info img:hover {
     transform: scale(1.1);
 }
+
 .settings i {
     margin: 0.5rem;
     color: gray;
     cursor: pointer;
+    font-weight: bold;
     transition: 0.2s;
 }
-.settings i:hover{
+
+.settings i:hover {
     transform: scale(1.2);
 }
+
 /* #left-section .top-section{
     border-right: solid 1px gray;
 } */
 
-#notification-box{
+#notification-box {
     background-color: #8edafc;
     height: 80px;
 }
-.notification-icon{
+
+.notification-icon {
     font-size: 1.5rem;
     color: #8edafc;
     background-color: white;
@@ -58,69 +70,106 @@ body{
 
     transition: 0.2s;
 }
-.notification-icon:hover{
+
+.notification-icon:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
-#notification-box h5{
-    margin:0;
+
+#notification-box h5 {
+    margin: 0;
     font-size: 1rem;
 }
-.text-mini{
+
+.text-mini {
     font-size: 0.6rem;
 }
+
 #search-bar {
     height: 40px;
 }
-#search-bar .bi-search{
+
+#search-bar .bi-search {
     position: absolute;
     display: inline-block;
     top: 10px;
     left: 20px;
     z-index: 1;
 }
-#chat-boxes{    
+
+#chat-boxes {
     height: 40vh;
     background-color: whitesmoke;
     overflow-y: scroll;
 }
-.chat-box{
+
+.chat-box {
     background-color: whitesmoke;
-    border-top:solid;
+    border-top: solid;
     border-color: gray;
     height: 70px;
     font-size: 28px;
     margin: 0;
+    transition: 0.2s;
 }
-#chat-boxes>.col-2 .col-9{
+
+.chat-box:hover {
+    background-color: lightgray;
+}
+
+#chat-boxes>.col-2 .col-9 {
     padding: 0;
 }
-.active-chat{
+
+.active-chat {
     transition: 0.2s;
     background-color: #009688;
     font-weight: bold;
 }
-.active-chat:hover{
+
+.active-chat:hover {
     background-color: #f2f2f2;
 }
-.contact-picture img{
+
+.contact-picture img {
     height: 50px;
     border-radius: 50%;
     background-color: #f2f2f2;
 }
-.contact-info>h5{
+
+.contact-info>h5 {
     font-size: 1rem;
     margin: 0;
 }
-.contact-info{
+
+.contact-info {
     height: 50px;
     flex-grow: 1;
     padding: 0 5px;
 }
-.contact-info > .last-message-sent{
+
+.contact-info>.last-message-sent {
     font-size: 0.7rem;
 }
-.contact-time{
+
+.contact-time {
     font-size: 0.5rem;
     height: 50px;
+}
+
+#chat {
+    background: url('../img/mine.jpg');
+    background-repeat: repeat;
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.message {
+    background-color: whitesmoke;
+    max-width: 45%;
+    margin-bottom: 20px;
+}
+.sent{
+    align-self: end;
+    background-color: #009688;
 }

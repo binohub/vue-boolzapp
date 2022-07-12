@@ -218,7 +218,7 @@ const app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                        message: 'ok',
                         status: 'received'
                     },
                     {
@@ -234,15 +234,14 @@ const app = new Vue({
                 ],
             }
         ],
-        activeChatIndex:0,
+        activeChatIndex: 0,
     },
     methods: {
-        addPicture(index){
-            return './img/avatar'+ this.contacts[index].avatar + '.jpg'
+        addPicture(index) {
+            return './img/avatar' + this.contacts[index].avatar + '.jpg'
         },
-        changeChatIndex(index){
-            /*   console.log(this.activeChatIndex) */
-              this.activeChatIndex = index
-          },
+        changeChatIndex(index) {
+            this.activeChatIndex = index
+        },
     }
 })
