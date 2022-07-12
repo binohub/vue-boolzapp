@@ -31,9 +31,9 @@
                     <!-- left section -->
                     <div class="col-5" id="left-section">
                         <!-- user -->
-                        <div id="left-top-section" class="d-flex justify-content-between p-3">
+                        <div id="left-top-section" class="top-section d-flex justify-content-between p-3">
                             <div class="user-info d-flex align-items-center">
-                                <img src="./img/avatar_io.jpg" alt="user picture">
+                                <img src="./img/avatar_spider.jpg" alt="user picture">
                                 <h5 class="user-name">Peter Parker</h5>
                             </div>
                             <div class="settings d-flex align-items-center">
@@ -43,10 +43,22 @@
                             </div>
                         </div>
                         <!-- notification -->
-                        <div id="notification-box">
+                        <div id="notification-box" class="p-2 d-flex align-items-center">
+                            <div class="notification-icon">
+                                <i class="bi bi-bell-slash-fill"></i>
+                            </div>
+                            <div class="notification-info ms-2">
+                                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                <span class="text-decoration-underline text-mini">Attiva notifiche desktop</span>
+                            </div>
                         </div>
                         <!-- bro search -->
-                        <div id="search-bar">
+                        <div id="search-bar" class="p-2 position-relative">
+                            <i class="bi bi-search"></i>
+                            <div class="input-group flex-nowrap ">
+                                <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat"
+                                >
+                            </div>
                         </div>
                         <!-- bro chats -->
                         <div id="chat-boxes">
