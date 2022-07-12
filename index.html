@@ -119,18 +119,29 @@
                                 </div>
                                 <div class="chat-message-time position-absolute">
                                 </div>
-                                </div>
                             </div>
                         </div>
 
+
                         <!-- typing input section -->
-                        <div id="user-input-box">
+                        <div id="user-input-box" class="row">
+                                <div class="col-2 d-flex justify-content-center align-items-center">
+                                    <i class="bi bi-emoji-sunglasses"></i>
+                                </div>
+                                <div class="col-9 d-flex justify-content-center align-items-center">
+                                    <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newChatMessage"
+                                        @keyup.enter='addNewChatMessage(newChatMessage)' class="form-control">
+                                </div>
+                                <div class="col-1 d-flex justify-content-center align-items-center">
+                                    <i class="bi bi-mic" @click="trythis(getTimeOfUser())"></i>
+                                </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+    </div>
     </div>
     </div>
 

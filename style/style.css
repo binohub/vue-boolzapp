@@ -14,9 +14,11 @@ body {
 .container-lg {
     background-color: #d9dbd3;
     height: 80vh;
-    margin-top: 80px;
+    margin-top: 100px;
 }
-
+.row > *{
+    padding: 0;
+}
 #left-section,
 #right-section {
     padding: 0;
@@ -98,7 +100,7 @@ body {
 }
 
 #chat-boxes {
-    height: 40vh;
+    height: 60vh;
     background-color: whitesmoke;
     overflow-y: scroll;
 }
@@ -117,9 +119,7 @@ body {
     background-color: lightgray;
 }
 
-#chat-boxes>.col-2 .col-9 {
-    padding: 0;
-}
+
 
 .active-chat {
     transition: 0.2s;
@@ -160,7 +160,7 @@ body {
 #chat {
     background: url('../img/mine.jpg');
     background-repeat: repeat;
-    height: 40vh;
+    height: 640px;
     overflow-y: scroll;
 }
 
@@ -172,4 +172,11 @@ body {
 .sent{
     align-self: end;
     background-color: #009688;
+}
+#user-input-box{
+    height: 60px;
+    width: 100%;
+}
+#user-input-box i {
+    font-size: 1.5rem;
 }
