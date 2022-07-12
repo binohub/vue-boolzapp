@@ -17,3 +17,17 @@ body{
 .top-section{
     height: 60px;
 }
+.user-info img{
+    height:40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.settings i {
+    margin: 0.5rem;
+    color: gray;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.settings i:hover{
+    transform: scale(1.2);
+}
