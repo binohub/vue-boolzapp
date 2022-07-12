@@ -1,215 +1,47 @@
-<!-- <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- style CSS -->
-<link rel="stylesheet" href="./style/style.css">
-<!-- Bootstrap CSS & icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<title>Whaddup</title>
+    <!--! import meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--! import bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--! import bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!--! import vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- todo this may require a change -->
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/main.js" defer></script>
+    <title>Boolzapp</title>
 </head>
-
 <body>
 
-    <div id="app" class="d-flex align-items-center">
-        <!-- ! ########## BACKGROUND ######### -->
-        <div class="background">
-            <div class="bgUp"></div>
-            <div class="bgDown"></div>
-        </div>
+    <div id="bg-upper-color">
+        <!-- ! js connection -->
+        <div id="app">
+            <!-- container.css centred -->
+            <div class="container-lg mx-auto">
+                <!-- grid -->
+                <div class="row">
 
+                    <!-- left section -->
+                    <div class="col-5" id="left-section">
 
-        <!-- ! ########## CONTAINER ######### -->
-        <div class="container bg-dark text-light">
-            <div class="row">
-                <div class="col-4">
-                    <div class="left">
-
-
-                        <header class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <div class="userLogo mx-2">
-                                    <img class="logo" :src=" './img/avatar' + user.avatar + '.jpg' " alt="io">
-                                </div>
-                                <div class="userName mx-2">
-                                    <span>{{user.name}}</span>
-                                </div>
-                            </div>
-                            <div class="text-end">
-                                <div class="userSettings">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-chat-heart" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-sliders2-vertical" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M0 10.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1H3V1.5a.5.5 0 0 0-1 0V10H.5a.5.5 0 0 0-.5.5ZM2.5 12a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5Zm3-6.5A.5.5 0 0 0 6 6h1.5v8.5a.5.5 0 0 0 1 0V6H10a.5.5 0 0 0 0-1H6a.5.5 0 0 0-.5.5ZM8 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2A.5.5 0 0 0 8 1Zm3 9.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1H14V1.5a.5.5 0 0 0-1 0V10h-1.5a.5.5 0 0 0-.5.5Zm2.5 1.5a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0v-2a.5.5 0 0 0-.5-.5Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </header>
-                        <div id="notifications"
-                            class="d-flex justify-content-around align-items-center bg-primary text-dark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-bell-slash bg-white text-dark rounded-circle p-2" viewBox="0 0 16 16">
-                                <path
-                                    d="M5.164 14H15c-.299-.199-.557-.553-.78-1-.9-1.8-1.22-5.12-1.22-6 0-.264-.02-.523-.06-.776l-.938.938c.02.708.157 2.154.457 3.58.161.767.377 1.566.663 2.258H6.164l-1 1zm5.581-9.91a3.986 3.986 0 0 0-1.948-1.01L8 2.917l-.797.161A4.002 4.002 0 0 0 4 7c0 .628-.134 2.197-.459 3.742-.05.238-.105.479-.166.718l-1.653 1.653c.02-.037.04-.074.059-.113C2.679 11.2 3 7.88 3 7c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0c.942.19 1.788.645 2.457 1.284l-.707.707zM10 15a2 2 0 1 1-4 0h4zm-9.375.625a.53.53 0 0 0 .75.75l14.75-14.75a.53.53 0 0 0-.75-.75L.625 15.625z" />
-                            </svg>
-                            <div>
-                                <h6>Ricevi notifiche di nuovi messaggi</h6>
-                                <a href="#">Attiva notifiche desktop</a>
-                            </div>
-                        </div>
-                        <div id="searchBro" class="input-group rounded">
-                            <span class="input-group-text border-0 bg-dark text-white" id="search-addon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                    class="mx-1 bi bi-search-heart" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                                    <path
-                                        d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-                                </svg>
-                            </span>
-
-                            <input type="search" class="mx-4 form-control rounded bg-dark text-white"
-                                placeholder="Cerca o inizia una nuova chat" aria-label="Search"
-                                v-model="userSearch" @keyup.enter="functionSearch()"
-                                aria-describedby="search-addon" />
-
-                        </div>
-                        <div id="bro">
-                            <div id="broContainer" @click="functionBroClicked(index)" class=" d-flex justify-content-between align-items-center p-3"
-                                v-for="(element, index) in contacts">
-                                <div class="d-flex">
-                                    <img class="logo px-2" :src=" './img/avatar' + element.avatar + '.jpg' "
-                                        alt="avatar">
-                                    <div class="px-2">
-                                        <h5>{{ element.name }}</h5>
-                                        <span> ultimo messaggio inviato </span>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <span>12:00</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="col-8">
-                    <div class="right">
 
-                        <header class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <div class="userLogo mx-2">
-                                    <img class="logo" src="./img/avatar_io.jpg" alt="io">
-                                </div>
-                                <div class="userName mx-2 d-flex flex-column">
-                                    <span>{{ contacts[active].name }}</span>
-                                    <p>ultimo accesso oggi alle {{lastAccess}}</p>
-                                </div>
-                            </div>
-                            <div class="text-end">
-                                <div class="userSettings">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-search-heart" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                                        <path
-                                            d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-file-arrow-up" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5z" />
-                                        <path
-                                            d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                        class="mx-2 bi bi-sliders2" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </header>
-                        <main class="mainChat">
-                            <div v-for="(singleMessage, index) in contacts[active].messages"
-                            :class="{'sent-msg': singleMessage.status == 'sent', 'received-msg': singleMessage.status == 'received'}"
-                            class="msg-container">
-                            <div class="msg-box">
-                                <div class="msg-text">
-                                    <p>{{singleMessage.message}}</p>
-                                    <p class="msg-date">{{singleMessage.date}}</p>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- right section -->
+                    <div class="col-7">
 
-                            
-                            
-                        </main>
-
-                        <div id="type" class="input-group d-flex align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
-                                class=" px-2 mx-5 bi bi-emoji-smile-upside-down" viewBox="0 0 16 16">
-                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0-1a8 8 0 1 1 0 16A8 8 0 0 1 8 0z" />
-                                <path
-                                    d="M4.285 6.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 4.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 3.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683zM7 9.5C7 8.672 6.552 8 6 8s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5z" />
-                            </svg>
-
-                            <input class="form-control bg-dark text-light text-center" placeholder="Scrivi un messaggio" 
-                            v-model="newMessage" @keyup.enter="sendNewMessage(newMessage)" type="text" placeholder=" Scrivi un messaggio "> 
-                            
-                            <div class="input-group-append">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
-                                    class=" px-2 mx-5 bi bi-mic" viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
-                                    <path
-                                        d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
-                                </svg>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
-
-
-
             </div>
         </div>
     </div>
 
-
-
-
-    <!-- Optional JavaScript -->
-    <script src="./js/main.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
