@@ -108,9 +108,9 @@ body {
 .chat-box {
     background-color: whitesmoke;
     border-top: solid;
-    border-color: gray;
+    border: 1px solid rgb(232, 230, 230);
     height: 70px;
-    font-size: 28px;
+    font-size: 20px;
     margin: 0;
     transition: 0.2s;
 }

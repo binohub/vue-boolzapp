@@ -5,6 +5,111 @@ const app = new Vue({
     data: {
         contacts: [
             {
+                name: 'Signor Stark',
+                avatar: '_iron',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'mi stai ignorando?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'ehy!',
+                        status: 'sent'
+                    },
+                ],
+            },
+            {
+                name: 'Zendaya',
+                avatar: '_zendaya',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Cap',
+                avatar: '_cap',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Tobey spidey 2',
+                avatar: '_toby',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
+                name: 'Andrew spidey 3',
+                avatar: '_garfield',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ricordati di stendere i panni',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        message: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+            {
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -276,6 +381,7 @@ const app = new Vue({
             }
         ],
         activeChatIndex: 0,
+        newChat: '',
     },
     methods: {
         addPicture(index) {
@@ -283,6 +389,18 @@ const app = new Vue({
         },
         changeChatIndex(index) {
             this.activeChatIndex = index
+        },
+        addNewChat(inputMessage){
+            if (inputMessage == '') return
+
+            this.contacts[this.activeChatIndex].messages.push({date: '10/01/2020 15:50:00',message:inputMessage,status: 'sent'})
+            this.newChat = ''
+            this.messageAnswer()
+        },
+        messageAnswer(){
+            setTimeout (() =>{
+                this.contacts[this.activeChatIndex].messages.push({date: '10/01/2020 15:50:00',message:"chi sei??",status: 'received'})
+            },1000)
         },
     }
 })
