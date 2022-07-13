@@ -57,13 +57,14 @@
                             <i class="bi bi-search"></i>
                             <div class="input-group flex-nowrap ">
                                 <input type="text" class="form-control px-5"
+                                    v-model="searchThis" @input="search()"
                                     placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <!-- bro chats -->
-                        <div id="chat-boxes">
                             <div id="chat-boxes">
                                 <div v-for="(item, index) in contacts" :key="index"
+                                    v-if="item.visible === true "
                                     class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
                                     :class="{'active-chat': activeChatIndex === index}" @click=changeChatIndex(index)>
 
@@ -83,7 +84,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
 
                     <!-- right section -->
